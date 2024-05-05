@@ -5,6 +5,20 @@ import { Grid, CircularProgress } from '@mui/material'
 import useJobListing from '../utils/hooks/useJobListing';
 import ShimmerJobCard from './ShimmerJobCard';
 
+
+const renderSkeletons = () => {
+    return (
+        <Grid container spacing={3} style={{marginTop:"44px"}}>
+            {Array.from({ length: 6 }).map((_, index) => (
+                <Grid item xs={12} sm={6} md={4} key={index}>
+                    <ShimmerJobCard/>
+                </Grid>
+            ))}
+        </Grid>
+    );
+};
+
+
 const JobListing = () => {
     const {
         loading,
@@ -27,7 +41,7 @@ const JobListing = () => {
             ))
         }
     </Grid>
-    {loading && <CircularProgress />}
+    {loading && renderSkeletons()}
 </div>
   )
 }
