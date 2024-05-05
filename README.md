@@ -107,3 +107,14 @@ npm start
 - This project was developed as part of an assignment for Weekday.
 - Special thanks to [Material-UI](https://mui.com/) for providing the UI components used in this project.
 
+
+## Hosting
+
+- The app is hosted on [vercel](https://job-search-portal-sigma.vercel.app/)
+
+
+## Quick Info
+
+- Download my [resume](https://drive.google.com/file/d/12_dM1oCuQ80cvW_PbssD4bBLXSBPk5zE/view?usp=sharing)
+- Visit my [portfolio](https://www.abhinavdixit.com/)
+- Email me at [abhinavdixit2306@gmail.com](mailto:abhinavdixit2306@gmail.com)
