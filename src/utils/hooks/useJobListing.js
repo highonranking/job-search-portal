@@ -36,6 +36,45 @@ const useJobListing = () => {
         return delayedFetchJobs.cancel;
       }, [delayedFetchJobs, filterParams]);
 
+    useEffect(() => {
+        dispatch(fetchJobs({ offset: 0, filters: filterParams }));
+        }, [dispatch, filterParams]);
+
+    const handleFilter = (filters) => {
+        // Reset page count when filters change
+        setPage(1);
+        setFilterParams(filters);
+    };
+
+    // infinite scrolling logic implementation
+
+    const handleScroll = useCallback(() => {
+        const handleScrollLogic = () => {
+          if (
+            window.innerHeight + window.scrollY >=
+              document.documentElement.scrollHeight - 100 &&
+            jobs.length < totalCount &&
+            !loading
+          ) {
+            dispatch(fetchJobs({ offset: jobs.length, filters: filterParams }));
+          }
+         };
+            // Debounce the scroll event for performance optimization
+            const debouncedHandleScroll = debounce(handleScrollLogic, 200); // Adjust debounce delay as needed
+
+            // Add event listener for scroll
+            window.addEventListener("scroll", debouncedHandleScroll);
+
+            // Cleanup function to remove event listener
+            return () => {
+            window.removeEventListener("scroll", debouncedHandleScroll);
+            };
+        }, [dispatch, jobs.length, totalCount, loading, filterParams]);
+
+        useEffect(() => {
+            handleScroll(); // Call the handleScroll function once on initial render
+            }, [handleScroll]);
+
 
     return {
       };
