@@ -1,8 +1,8 @@
-
+import JobListing from "./components/JobListing";
 function App() {
   return (
     <div className="App">
-      Job Search Platform
+      <JobListing/>
     </div>
   );
 }
