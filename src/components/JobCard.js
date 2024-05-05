@@ -49,14 +49,13 @@ const JobCard = ({ job }) => {
 
                 <Typography variant="body2" sx={{ fontWeight: "500" }}>About Company:</Typography>
                 <Typography variant="body1" sx={{ fontWeight: "400", mb: 1 }}>About Us</Typography>
-                <Typography variant="body2" className="description">
-                    Description:{" "}
+                <Typography variant="body2" className="description" sx={{fontWeight:300}}>
                     {job.jobDetailsFromCompany
                         ? expanded
                             ? job.jobDetailsFromCompany
                             : `${job.jobDetailsFromCompany.substring(0, 100)}...`
                         : "No description available"}
-                    <Button onClick={handleExpandClick} className="expand-button">
+                    <Button onClick={handleExpandClick} className="expand-button" sx={{color:"gray", fontWeight:300}}>
                         {expanded ? "Read less" : "Read more"}
                     </Button>
                 </Typography>

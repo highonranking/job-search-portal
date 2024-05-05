@@ -27,6 +27,7 @@ const useJobListing = () => {
         debounce((params) => dispatch(fetchJobs(params)), 500),
         [dispatch]
     );
+    
 
     useEffect(() => {
         // Fetch initial set of jobs

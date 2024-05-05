@@ -1,7 +1,7 @@
 import React from 'react'
 import JobCard from './JobCard'
 import Filters from './Filters'
-import { Grid, CircularProgress } from '@mui/material'
+import { Grid } from '@mui/material'
 import useJobListing from '../utils/hooks/useJobListing';
 import ShimmerJobCard from './ShimmerJobCard';
 
@@ -30,7 +30,7 @@ const JobListing = () => {
 
   return (
     <div>
-    <h1>Job Listing</h1>
+    <h1 style={{fontWeight:300}}>Search Jobs</h1>
     <Filters onFilter={handleFilter}/>
     <Grid container spacing={9}>
         { 

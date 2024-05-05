@@ -21,7 +21,7 @@ const SideNav = () => {
     <Sidebar
       collapsed={collapsed}
       className={`custom-sidebar ${collapsed ? "collapsed" : ""}`}
-      style={{ height: "100%" }}
+      style={{ height: "100%", borderRight:"20px" }}
     >
     <div
     className="toggle-btn"
@@ -29,9 +29,9 @@ const SideNav = () => {
     style={{
       position: 'absolute',
       top: 0,
-      right: 0,
+      right: "0px",
       zIndex: 999,
-      backgroundColor: '#fff', 
+      backgroundColor: 'white', 
       borderRadius: '50%',
       boxShadow: '0 1px 2px rgba(0, 0, 0, 0.1)', 
       padding: '1px',
@@ -42,7 +42,7 @@ const SideNav = () => {
   </div>
   
 
-      <Menu iconShape="square">
+      <Menu iconShape="square" >
         <MenuItem
           className="logo"
           disabled
@@ -51,11 +51,13 @@ const SideNav = () => {
               style={{ width: "40px" }}
               src={LOGO_URL}
               alt="Logo"
+
             />
           }
           style={{
             marginTop:"20px",
             marginBottom:"36px",
+
             
           }}
         >

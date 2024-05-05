@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Typography } from '@mui/material';
-import BoltIcon from '@mui/icons-material/Bolt';
-
+import BoltTwoToneIcon from '@mui/icons-material/BoltTwoTone';
 const ApplyButton = ({handleClick}) => {
     return (
         <Button
@@ -12,11 +11,12 @@ const ApplyButton = ({handleClick}) => {
                 width: '100%',
                 borderRadius: '10px',
                 textTransform: 'none', 
+                marginTop:"20px"
             }}
             onClick={handleClick}
             aria-label="Apply for this job with one click"
         >
-            <BoltIcon style={{ fontSize: '2rem', marginRight: '8px', color:'yellow' }} />
+            <BoltTwoToneIcon style={{ fontSize: '2rem', marginRight: '8px', color:'yellow' }} />
             <Typography
                 variant="button"
                 style={{ fontWeight: 'bold', color: 'black' }}
