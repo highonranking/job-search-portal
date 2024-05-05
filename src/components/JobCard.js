@@ -7,7 +7,7 @@ import { Card,
     Chip, } from '@mui/material';
 
 const JobCard = ({job}) => {
-    const [expanded, setExpanded] = useState(false);
+const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);

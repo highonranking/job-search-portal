@@ -59,7 +59,7 @@ const useJobListing = () => {
           }
          };
             // Debounce the scroll event for performance optimization
-            const debouncedHandleScroll = debounce(handleScrollLogic, 200); // Adjust debounce delay as needed
+            const debouncedHandleScroll = debounce(handleScrollLogic, 500); 
 
             // Add event listener for scroll
             window.addEventListener("scroll", debouncedHandleScroll);
@@ -101,7 +101,7 @@ const useJobListing = () => {
       // Apply filters based on filterParams
       return (
         (!filterParams.minExperience ||
-          minExpNumber >= parseFloat(filterParams.minExperience)) &&
+          minExpNumber <= parseFloat(filterParams.minExperience)) &&
         (!filterParams.companyName ||
           job.companyName
             .toLowerCase()
