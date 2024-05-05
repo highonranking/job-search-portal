@@ -23,9 +23,24 @@ const SideNav = () => {
       className={`custom-sidebar ${collapsed ? "collapsed" : ""}`}
       style={{ height: "100%" }}
     >
-      <div className="toggle-btn" onClick={handleToggleSidebar} >
-        {collapsed ? <ChevronRight /> : <ChevronLeft />}
-      </div>
+    <div
+    className="toggle-btn"
+    onClick={handleToggleSidebar}
+    style={{
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      zIndex: 999,
+      backgroundColor: '#fff', 
+      borderRadius: '50%',
+      boxShadow: '0 1px 2px rgba(0, 0, 0, 0.1)', 
+      padding: '1px',
+      cursor: 'pointer',
+    }}
+  >
+    {collapsed ? <ChevronRight /> : <ChevronLeft />}
+  </div>
+  
 
       <Menu iconShape="square">
         <MenuItem
