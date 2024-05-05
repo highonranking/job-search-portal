@@ -10,6 +10,7 @@ const JobListing = () => {
         filteredJobs,
         handleFilter,
       } = useJobListing();
+
     
   return (
     <div>
@@ -21,6 +22,7 @@ const JobListing = () => {
           <JobCard job={job} />
         </Grid>
       ))}
+      
     </Grid>
     {loading && <CircularProgress />}
   </div>
