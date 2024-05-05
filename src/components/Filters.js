@@ -56,7 +56,7 @@ const Filters = ({onFilter}) => {
     <div  className="filter">
         <form>
         {/** Company name Filter */}
-        <Grid container spacing={2}>
+        <Grid container spacing={2} justifyContent='center'>
             <Grid item xs={12} sm={2}>
                 <TextField
                 type="text"
@@ -70,7 +70,7 @@ const Filters = ({onFilter}) => {
                 margin="normal"
                 />
             </Grid>
-        </Grid>
+       
 
         {/** Role Filter */}
 
@@ -190,21 +190,22 @@ const Filters = ({onFilter}) => {
 
           {/** Remote */}
 
-          <Grid item xs={12} sm={2}>
+          <Grid item xs={12} sm={2}  style={{ marginTop: '24px' }}>
             <FormControlLabel
               control={
                 <Checkbox
                   name="remote"
                   checked={filters.remote}
                   onChange={handleChange}
-                  color="primary"
+                  color="warning"
+                  
                 />
               }
               label="Remote"
             />
           </Grid>
 
-
+        </Grid>
         </form>
     </div>
   )
