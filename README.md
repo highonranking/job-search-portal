@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# Candidate Application Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This is a web application for browsing job listings. Users can filter jobs based on various criteria such as experience, company name, location, remote availability, job role, and minimum base pay.
 
-## Available Scripts
+This is a part of the frontend developer assignment for Weekday.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+ **Job Filtering**: Users can filter jobs based on their preferences using various filter options provided.
+- **Infinite Scrolling**: Improve user experience by implementing lazy loading of jobs as the user scrolls, minimizing initial loading times.
+- **Responsive Design**: The web app is responsive and works well on both desktop and mobile devices.
+- **Easy Apply**: Users can easily apply to job listings directly from the application.
+- **Dynamic Sidebar**: The sidebar width adjusts dynamically based on user interaction for better usability.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React**: Frontend framework for building the user interface.
+- **Material-UI**: React UI framework for designing the components with a consistent look and feel.
+- **Redux**: State management library for managing application state and data flow.
+- **Lodash**: Utility library used for debouncing scroll events for performance optimization.
+- **CSS**: For Styling purposes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Folder Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+|-- frontend
+|   |-- node_modules
+|   |-- README.md
+|   |-- public
+|   |-- .gitignore
+|   |-- package-lock.json
+|   |-- package.json
+|   |-- src
+|   |   |-- designs
+|   |   |   |-- Buttons
+|   |   |   |   |-- Apply.js
+|   |   |-- constants
+|   |   |   |-- assets.js
+|   |   |-- index.js
+|   |   |-- utils
+|   |   |   |-- features
+|   |   |   |   |-- jobs
+|   |   |   |   |   |-- jobSlice.js
+|   |   |   |-- hooks
+|   |   |   |   |-- useSalaryEstimation.js
+|   |   |   |   |-- useJobListing.js
+|   |   |   |-- api.js
+|   |   |   |-- appStore.js
+|   |   |-- index.css
+|   |   |-- components
+|   |   |   |-- ShimmerJobCard.js
+|   |   |   |-- JobListing.js
+|   |   |   |-- JobCard.js
+|   |   |   |-- SideNav.js
+|   |   |   |-- Filters.js
+|   |   |-- App.js
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation Guide
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+- Node.js and npm installed on your machine.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repository:
 
-### Code Splitting
+```bash
+git clone https://github.com/highonranking/job-search-portal.git
+```
+2. Navigate to the repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+cd job-search-portal
+```
 
-### Analyzing the Bundle Size
+3. Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+npm install
+```
 
-### Making a Progressive Web App
+### Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Start the development server
 
-### Advanced Configuration
+```
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
 
-### Deployment
+2. Open your browser and go to http://localhost:3000 to view the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The data used in this project is retrieved from [API endpoint](https://api.weekday.technology/)
+- This project was developed as part of an assignment for Weekday.
+- Special thanks to [Material-UI](https://mui.com/) for providing the UI components used in this project.
+
