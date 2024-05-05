@@ -3,6 +3,7 @@ import JobCard from './JobCard'
 import Filters from './Filters'
 import { Grid, CircularProgress } from '@mui/material'
 import useJobListing from '../utils/hooks/useJobListing';
+import ShimmerJobCard from './ShimmerJobCard';
 
 const JobListing = () => {
     const {
@@ -12,20 +13,22 @@ const JobListing = () => {
       } = useJobListing();
 
     
+
   return (
     <div>
     <h1>Job Listing</h1>
     <Filters onFilter={handleFilter}/>
     <Grid container spacing={9}>
-      {filteredJobs.map((job) => (
-        <Grid item xs={12} sm={6} md={4} key={job.id}>
-          <JobCard job={job} />
-        </Grid>
-      ))}
-      
+        { 
+            filteredJobs.map((job) => (
+                <Grid item xs={12} sm={6} md={4} key={job.id}>
+                    <JobCard job={job} />
+                </Grid>
+            ))
+        }
     </Grid>
     {loading && <CircularProgress />}
-  </div>
+</div>
   )
 }
 
