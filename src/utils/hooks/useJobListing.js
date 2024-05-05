@@ -76,6 +76,47 @@ const useJobListing = () => {
             }, [handleScroll]);
 
 
+        
+  useEffect(() => {
+    if (page > 1) {
+      // Fetch more jobs when page changes
+      delayedFetchJobs({ offset: jobs.length, filters: filterParams });
+    }
+  }, [delayedFetchJobs, filterParams, jobs.length, page]);
+
+  const applyFilters = useCallback(() => {
+    return jobs.filter((job) => {
+      // Convert minExp to a number for comparison
+      const minExpNumber = parseFloat(job.minExp);
+
+      // Convert minJdSalary to a number for comparison
+      const minSalaryNumber = parseFloat(job.minJdSalary);
+
+      // Check if job roles match any of the selected job role(s)
+      const jobRoleMatched =
+        filterParams.jobRole.length === 0 ||
+        filterParams.jobRole.some((selectedRole) =>
+          job.jobRole.toLowerCase().includes(selectedRole.toLowerCase())
+        );
+
+      // Apply filters based on filterParams
+      return (
+        (!filterParams.minExperience ||
+          minExpNumber >= parseFloat(filterParams.minExperience)) &&
+        (!filterParams.companyName ||
+          job.companyName
+            .toLowerCase()
+            .includes(filterParams.companyName.toLowerCase())) &&
+        (!filterParams.location ||
+          job.location.toLowerCase().includes(filterParams.location.toLowerCase())) &&
+        (!filterParams.remote || job.location.toLowerCase() === "remote") &&
+        (!filterParams.minBasePay ||
+          minSalaryNumber >= parseFloat(filterParams.minBasePay)) &&
+        jobRoleMatched
+      );
+    });
+  }, [jobs, filterParams]);
+  
     return {
       };
 };
