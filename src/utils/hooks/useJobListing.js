@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchJobs } from '../features/jobs/jobSlice';

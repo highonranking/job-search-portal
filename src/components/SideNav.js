@@ -53,9 +53,14 @@ const SideNav = () => {
               alt="Logo"
             />
           }
+          style={{
+            marginTop:"20px",
+            marginBottom:"36px",
+            
+          }}
         >
           <img
-            style={{ width: "90px" }}
+            style={{ width: "90px"}}
             src={LOGO_FULL}
             alt="company name"
           />
