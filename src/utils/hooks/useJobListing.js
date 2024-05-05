@@ -1,6 +1,6 @@
 import React from 'react'
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector,useCallback } from "react-redux";
+import { useState, useEffect, useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchJobs } from '../features/jobs/jobSlice';
 import debounce from "lodash.debounce";
 
@@ -23,8 +23,7 @@ const useJobListing = () => {
 
 
     const [page, setPage] = useState(1);
-    const [sidebarWidth, setSidebarWidth] = useState(0);
-
+    
     const delayedFetchJobs = useCallback(
         debounce((params) => dispatch(fetchJobs(params)), 500),
         [dispatch]
@@ -116,9 +115,15 @@ const useJobListing = () => {
       );
     });
   }, [jobs, filterParams]);
-  
-    return {
-      };
-};
 
+   const filteredJobs = applyFilters();
+
+  return {
+    filterParams,
+    loading,
+    totalCount,
+    handleFilter,
+    filteredJobs,
+  };
+};
 export default useJobListing;
